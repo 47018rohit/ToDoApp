@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('/src/Styles/Home.scss');
+
+::-webkit-scrollbar{
+    background-color: transparent;
+    width: 10px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #a4a4a453;
+    border-radius: .25rem;
+}
+
+$main-bg : #99a8bb;
+$display-board: #3c345c76;
+$boxBorder: #454759;
+$boxBG : #4a4d61;
+$font-hover: #ffffff;
+$hover-bg: #4e6190;
+$font-color: #DEE4F0;
+$font-family: 'Poppins', sans-serif;
+
+@mixin border {
+    border: 1px solid white;
+    border-radius: 1rem;
+}
+
+@mixin boxShadow {
+    box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.189);
+}
+
+@mixin inputBox {
+    background-color: #DEE4F0;
+    color: #40444F;
+    padding: .5rem 1rem;
+    border: 1px solid #75747492;
+    border-radius: 0.5rem;
+    outline: none;
+    font-family: $font-family;
+    font-size: 14px;
+
+}
+
+@mixin buttons {
+    font-family: $font-family;
+    font-size: 15px;
+    padding: .5rem 1rem;
+    border: 1px solid #5454546f;
+    border-radius: .5rem;
+    cursor: pointer;
+    background-color: $hover-bg;
+    color: #DEE4F0;
+}
+
+@mixin buttonHover {
+    border: 1px solid #fff;
+    color: #fff;
+    box-shadow: inset 0px 0px 5px 1px #d76bff,
+        0px 0px 8px 3px #e398ff;
+    text-shadow: 0px 0px 7px #d76bff,
+        0px 0px 13px #e398ff;
+}
+
+@mixin form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    // box-sizing: border-box;
+    width: 70%;
+    padding: 2rem;
+}
+
+* {
+    transition: all cubic-bezier(1, 0.25, 0, -0.32) 300ms;
+}
+
+body {
+    color: $font-color;
+    margin: 0px;
+    padding: 0px;
+    font-family: $font-family ;
+    text-align: center;
+    background-color: $main-bg;
+}
+
+.link {
+    text-decoration: none;
+    color: $font-color;
+
+}
+
+.link>span , button {
+    @include buttons;
+}
+
+.link>span:hover , button:hover {
+    @include buttonHover;
+}
+
+.link:hover {
+    color: $font-hover;
+}
+
+.container {
+    position: relative;
+    margin: 5rem auto;
+    background-color: $display-board;
+    width: 70%;
+    height: 715px;
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include border;
+    @include boxShadow;
+}
+
+.form {
+    @include form;
+    gap: 2rem;
+}
+
+.form input {
+    @include inputBox;
+    width: 80%;
+}
+
+.password-container {
+    display: flex;
+    position: relative;
+    width: 83%;
+}
+
+.password-container .eye {
+    position: absolute;
+    top: 7px;
+    right: 13px;
+    cursor: pointer;
+}
+
+.password-container input {
+    width: 100%;
+}
+
+button:disabled {
+    color: rgb(56, 56, 56);
+    background-color: gray;
+    border: 1px solid #000;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #f2f2f2;
+    font-size: 40px;
+}
+
+.home-button{
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+}
