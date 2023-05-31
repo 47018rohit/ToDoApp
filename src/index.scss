@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('/src/Styles/Home.scss');
 
+
 ::-webkit-scrollbar{
     background-color: transparent;
     width: 10px;
@@ -116,6 +117,16 @@ body {
     align-items: center;
     @include border;
     @include boxShadow;
+
+    @media screen and (max-width: 500px) {
+        width: 100%;
+        height: 100vh;
+        margin: auto;
+        overflow: auto;
+        padding: 0px;
+        border: 1px solid #00000000;
+        border-radius: 0px;
+    }
 }
 
 .form {
@@ -126,6 +137,9 @@ body {
 .form input {
     @include inputBox;
     width: 80%;
+    @media screen and (max-width: 500px) {
+        width: 90%;
+    }
 }
 
 .password-container {
@@ -164,10 +178,20 @@ button:disabled {
 h1 {
     color: #f2f2f2;
     font-size: 40px;
+    text-align: center;
+    @media screen and (max-width: 500px) {
+        font-size: 30px;
+    }
 }
 
 .home-button{
     position: absolute;
     bottom: 2rem;
-    left: 50%;
+    width: 29px;height: 29px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    padding: .25rem; 
+    @media screen and (max-width:500px) {
+        bottom: 1.25rem;
+    }   
 }

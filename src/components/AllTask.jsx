@@ -22,8 +22,8 @@ const AllTask = () => {
   }
   const handleDelete = async (id) => {
     try {
-      const task = await axios.delete(`${server}/task/${id}`, {}, {
-        withCredentials: true
+      const task = await axios.delete(`${server}/task/${id}`, {
+        withCredentials: true,
       })
       if (task) {
         toast.success('Task Deleted')
@@ -36,7 +36,7 @@ const AllTask = () => {
   const handleUpdate = async (id) => {
     try {
       const task = await axios.put(`${server}/task/${id}`, {}, {
-        withCredentials: true
+        withCredentials: true,
       })
       if (task) {
         toast.success('Updated')
@@ -63,7 +63,7 @@ const AllTask = () => {
             <div className='task-bar' key={index} >
               <div className="on-show">
                 <input
-                  onChange={() => { handleUpdate(e._id) }}
+                  onChange={() => handleUpdate(e._id) }
                   checked={e.isCompleted}
                   type="checkbox"
                   name="complete"
@@ -71,7 +71,7 @@ const AllTask = () => {
                 />
                 {e.title}
                 {showAccordian === index ? <ArrowDropUp className='toggleDescription' onClick={() => handleAccordian(index)} /> : <ArrowDropDown className='toggleDescription' onClick={() => handleAccordian(index)} />}
-                <Delete className='delete' onClick={() => { handleDelete(e._id) }} />
+                <Delete className='delete' onClick={() =>  handleDelete(e._id) } />
               </div>
               <div className={`description ${showAccordian === index ? '' : 'hidden'} `} >{e.description}</div>
             </div>
