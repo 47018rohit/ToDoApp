@@ -140,11 +140,12 @@
     padding: 1rem;
     border-radius: .5rem;
     display: flex;
-    background-color: rgba(224, 237, 245, 0.446);
+    background-color: #6b97c83e;
     display: flex;
     flex-direction: column;
     word-wrap: break-word;
     text-align: start;
+    
 }
 
 .toggleDescription,
@@ -239,4 +240,13 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
+}
+
+.description{
+    background-color: #01394d19;
+    margin-top: 1rem; padding: .5rem;
+    border-top: 1px solid #b4b4b4;
+    text-align: start;
+    font-size: 14px;
+    color: #cdcdcd;
 }
